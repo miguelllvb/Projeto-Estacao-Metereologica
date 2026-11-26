@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Monitoramento</title>  
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <b style="color: #42c528; background-color:#000000; font-size: 35px">Estação de monitoramento</b>
+  <table>
+    <tr>
+      <td style="width:25%">
+        <canvas id="an_gauge_1" data-title="Temperatura" data-units="&deg;C" width="350" height="450"
+          data-major-ticks= "0 5 10 15 20 25 30 35 40" data-type="canv-gauge" data-min-value="0"
+          data-max-value="40" data-highlights="0 10 #4D89F2, 0 10 #25B8D9, 10 20 #0BB950, 20 30 #cc5, 30 40 #f33"
+          data-onready="setInterval( function() { 
+                  Gauge.Collection.get('an_gauge_1').setValue(27);
+                }, 200);">
+        </canvas>
+      </td>
+      <td style="width:25%">
+        <canvas id="an_gauge_2" data-title="Umidade" data-units="%" width="350" height="450"
+          data-major-ticks="0 10 20 30 40 50 60 70 80 90" data-type="canv-gauge" data-min-value="0" data-max-value="90"
+          data-highlights="0 12 #ff0000, 12 20 #ff4500, 20 30 #ffff00, 30 40 #90ee90, 40 60 #00bfff, 60 90 #0000ff"
+          data-onready="setInterval( function() { 
+                  Gauge.Collection.get('an_gauge_2').setValue(56);
+                }, 200);">
+        </canvas>
+      </td>
+    </tr>
+<tr>
+      <td style="width:25%">
+        <canvas id="an_gauge_3" data-title="Pluviômetro" data-units="Mm" width="350" height="450"
+          data-major-ticks="0 1 2 3 4 5 6 7 8 9 10" data-type="canv-gauge" data-min-value="0" data-max-value="10"
+          data-highlights="0 #4D89F2, 0 3 #25B8D9, 3 5 #0BB950, 5 8 #cc5, 8 10 #f33"
+          data-onready="setInterval( function() { 
+                  Gauge.Collection.get('an_gauge_3').setValue(2);
+                }, 200);">
+        </canvas>
+      </td>
+
+      <td style="width:25%">
+        <canvas id="an_gauge_4" data-title="Vento" data-units="Km/h" width="350" height="450"
+          data-major-ticks="0 10 20 30 40 50 60 70 80 90" data-type="canv-gauge" data-min-value="0" data-max-value="90"
+          data-highlights="0 20 #00ff00, 20 40 #0000ff, 40 60 #ff0000, 60 90 #a47dab"
+          data-onready="setInterval( function() { 
+                  Gauge.Collection.get('an_gauge_4').setValue(20);
+                }, 200);">
+        </canvas>
+      </td>
+    </tr>
+
+  </table>
+  <b style="color: #42c528; background-color:#000000;font-size: 35px"><span id="datetime"></span></b>
+
+<script src="js/script.js"></script>
+</body>
+</html>
